@@ -1,0 +1,18 @@
+name: Schedule a task
+
+on:
+  schedule:
+    - cron: '*/2 * * * *'
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Echo current time
+        run: echo "The currenrt time is $(date)"  
+  final:
+    needs: hello-world
+    runs-on: ubuntu-24.04
+    steps:
+      - run: "The final job was executed succesfully after the first job"
+    
