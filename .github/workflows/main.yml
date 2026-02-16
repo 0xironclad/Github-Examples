@@ -1,0 +1,16 @@
+name: multi event workflow
+
+on:
+  push:
+    branches: 
+      -main
+
+jobs:
+  helloworld:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "echo basic info"
+        run: echo "Action $GITHUB_ACTION"
+    
+  
+      
